@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplo DOM con JavaScript</title>
+    <style>
+      .azul {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body onload="entrar()">
+    <!-- 
+    <h1 onclick="cambiarTexto(this);">Manejo DOM con javascript</h1>
+    -->
+  <!-- 
+    <h1 id="titulo" onmouseover="rojo(this)" onmouseout="azul(this)"
+        onmousedown="verde(this)" onmouseup="negro(this)"
+        onclick="amarillo(this)">
+        Manejo DOM con javascript
+    </h1>
+   -->
+   <h1 onclick="cambiar(this);">Manejo DOM con javascript</h1>
+    <br/>
+    <!--
+    Nombre: <input type="text" id="nombre" onchange="convertir(this)">
+    -->
+    <form id="forma">
+        Nombre: <input type="text" id="nombre"/>
+        <br/>
+        Apellido: <input type="text" id="apellido"/>
+        <br/>
+     
+    </form>
+    <script>
+        const forma = document.getElementById('forma');
+        forma.addEventListener('focus',(evento) => {
+            evento.target.style.background = 'pink';
+        }, true);
+        /*
+        document.getElementById('nombre').addEventListener('focus',(evento)=>{
+            evento.target.style.background = 'green';
+        });
+        
+        document.getElementById('nombre').addEventListener('blur',regresar);
+        function regresar(evento){
+            evento.target.style.background = 'white'; 
+        }
+        */
+    </script>
+    
+
+
+  
+  <!--
+    Nombre: <input type="text" id="nombre" onfocus="cambiar(this)"
+    onblur="regresar(this)">
+    <br/>
+    Apellido: <input type="text" id="apellido" onfocus="cambiar(this)"
+    onblur="regresar(this)">
+    <br/>
+  
+  
+  <script>
+       function regresar(elementoInput){
+           elementoInput.style.background = 'white';
+       }
+       function cambiar(elementoInput){
+           elementoInput.style.background = 'yellow';
+       }
+
+       function rojo(titulo){
+           titulo.style.color = 'red';
+           console.log("evento onmouseover");
+       }
+
+       function azul(titulo){
+           titulo.style.color = 'blue';
+           console.log("evento onmouseout");
+       }
+
+       function verde(titulo){
+           titulo.style.color = 'green';
+           console.log("evento onmouseup");
+       }
+       function negro(titulo){
+           titulo.style.color = 'black';
+           console.log("evento onmousedown");
+       }
+       function amarillo(titulo){
+           titulo.style.color = 'yellow';
+           console.log("evento onmouseclick");
+       }
+
+
+        function convertir(nombreInput){
+            nombreInput.value = nombreInput.value.toUpperCase();
+        }
+    </script>
+    -->
+    <div id="mostrar"></div>
+   <script>
+       function entrar(){
+           //alert('Entrando a la pagina web');
+           let texto = '';
+           if(navigator.cookieEnabled){
+               texto = 'Las Cookies estan habilitadas';
+           } else {
+               texto = 'Las Cookies estan deshabilitadas';
+           }
+           document.getElementById('mostrar').innerHTML = texto;
+       }
+
+
+       /*
+       function cambiarTexto(titulo){
+           console.log(titulo);
+           console.log(titulo.innerHTML);
+           titulo.innerHTML = 'Cambiamos el titulo';
+           console.log(titulo.innerHTML);
+       }
+       */
+      /*
+      document.getElementById('titulo').onclick = cambiarTexto;
+      function cambiarTexto(){
+          document.getElementById('mostrar').innerHTML = 'Nuevo Titulo';
+      }
+      */ 
+   </script>
+   
+
+  </body>
+</html>

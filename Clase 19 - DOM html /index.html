@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplo DOM con JavaScript</title>
+    <style>
+      .azul {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- -->
+    <h1 id="titulo">Manejo DOM con javascript</h1>
+    <button onclick="mostrar()">MOSTRAR</button>
+    <br/>
+    <button onclick="cambiarImagen()">CAMBIAR IMAGEN</button>
+    <br/>
+
+    <img id="imagen" src="http://globalmentoring.com.mx/imagenes/javascript.png">
+
+   <script>
+       //document.write('Saludos desde javascript');
+       
+       function mostrar(){
+           //document.write('Adios');
+           document.getElementById('titulo').innerHTML += "<br/>Nuevo Titulo";
+           document.getElementById('titulo').style.color = 'blue';
+       }
+       function cambiarImagen(){
+           document.getElementById('imagen').src = "http://globalmentoring.com.mx/imagenes/html5.png"
+       }
+   </script>
+   
+   <!--
+    <form id="formulario">
+      Nombre: <input type="text" name="nombre" value="Juan" />
+      <br />
+      Apellido: <input type="text" name="apellido" value="Morruca" />
+      <br />
+    </form>
+    <button onclick="mostrarValores()">Mostar</button>
+    <div id="valores">
+      <script>
+        function mostrarValores() {
+          let formulario = document.forms["formulario"];
+          let nombre = formulario['nombre'];
+          let apellido = formulario['apellido'];
+          console.log(nombre);
+          console.log(apellido);
+          console.log( nombre.value+ '<br/>' + apellido.value)
+          console.log("nombre (form): " + nombre.value);
+          console.log("apellido (form): " + apellido.value);
+          let texto = "";
+          for (let elem of formulario) {
+            texto += elem.value + "<br/>";
+          }
+          document.getElementById('valores').innerHTML = texto;
+          console.log(texto);
+        }
+      </script>
+    </div>
+    -->
+    <!-- 
+    <h1 id="cabecera" class="azul">Ejemplo DOM con JavaScript</h1>
+    <p id="parrafo" class="azul">Saludos!</p>
+    <p id="parrafo2"class="azul">Otro Saludo!</p>
+    <p id="parrafo3">Otro mas!</p>
+   
+   <script>
+       /*
+        //let cabecera = document.getElementById('cabecera').innerHTML;
+        //console.log("valor cabecera: " + cabecera);
+        let cabecera = document.getElementById('cabecera');
+        //let parrafo = document.getElementById('parrafo').innerHTML;
+        let parrafo = document.getElementById('parrafo')
+        console.log("valor parrafo: " + parrafo);
+        console.log('Saludos desde javascript');
+        console.log(`valor parrafo: "  ${parrafo.innerHTML}`);
+        parrafo.innerHTML = 'Nuevo valor del parrafo';
+        cabecera.innerHTML = 'Nueva cabecera';
+        */
+
+        /*
+        let elementos = document.getElementsByTagName('p');
+        console.log(`No. de elementos: ${elementos.length} `);
+        for (let i = 0; i< elementos.length ; i++){
+            console.log(i +': - ' +elementos[i].innerHTML);
+        }
+        */
+
+        /*
+        let elementos = document.getElementsByClassName('azul');
+        console.log(`No. de elementos clase azul: ${elementos.length} `);
+        for (let i = 0; i< elementos.length ; i++){
+            console.log(i +': - ' +elementos[i].innerHTML);
+        }
+       
+        for (let elemento of elementos){
+            console.log(elemento.innerHTML);
+        }
+        */
+        /*
+        let elementos = document.querySelectorAll('p.azul');
+        console.log(`No. de elementos clase azul: ${elementos.length} `);
+        for (let i = 0; i< elementos.length ; i++){
+            console.log(i +': - ' +elementos[i].innerHTML);
+        }
+       
+        for (let elemento of elementos){
+            console.log(elemento.innerHTML);
+        }
+        */
+    </script>
+    -->
+  </body>
+</html>
